@@ -60,6 +60,90 @@ function App() {
     }
   };
 
+  render() {
+    return (
+      <Container>
+        <Row
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            fontSize: "3rem",
+            fontWeight: "bolder",
+          }}
+        >
+          TODO LIST
+        </Row>
+        <hr />
+        <Row>
+          <Col md={{ span: 5, offset: 4 }}>
+            <InputGroup className="mb-3">
+              <FormControl
+                placeholder="add item . . . "
+                size="lg"
+                value={this.state.userInput}
+                onChange={(e) => this.updateInput(e.target.value)}
+                aria-label="add something"
+                aria-describedby="basic-addon2"
+              />
+              
+            </InputGroup>
+          </Col>
+        </Row>
+        <Row>
+            <Col md={{ span: 5, offset: 8}}>
+            <InputGroup>
+            <Button
+                variant="primary"
+                className="mt-2"
+                onClick={this.addItem}
+              >
+                ADD
+              </Button>
+              </InputGroup>
+            </Col>
+          
+        </Row>
+        <br />
+        <Row>
+          <Col md={{ span: 5, offset: 4 }}>
+            <ListGroup>
+              {this.state.list.map((item) => (
+                <ListGroup.Item
+                  key={item.id}
+                  variant="dark"
+                  action
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  {item.value}
+                  <span>
+                    <Button
+                      style={{ marginRight: "10px" }}
+                      variant="danger"
+                      onClick={() => this.deleteItem(item.id)}
+                    >
+                      Delete
+                    </Button>
+                    <Button
+                      backgroundColor="orange"
+                      variant="warning"
+                      onClick={() => this.editItem(item.id)}
+                    >
+                      Edit
+                    </Button>
+                  </span>
+                </ListGroup.Item>
+              ))}
+            </ListGroup>
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
+=======
   return (
     <Container>
       <Row
