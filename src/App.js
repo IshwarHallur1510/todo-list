@@ -97,7 +97,7 @@ class App extends Component {
             <Col md={{ span: 5, offset: 8}}>
             <InputGroup>
             <Button
-                variant="dark"
+                variant="primary"
                 className="mt-2"
                 onClick={this.addItem}
               >
@@ -125,13 +125,14 @@ class App extends Component {
                   <span>
                     <Button
                       style={{ marginRight: "10px" }}
-                      variant="light"
+                      variant="danger"
                       onClick={() => this.deleteItem(item.id)}
                     >
                       Delete
                     </Button>
                     <Button
-                      variant="light"
+                      backgroundColor="orange"
+                      variant="warning"
                       onClick={() => this.editItem(item.id)}
                     >
                       Edit
